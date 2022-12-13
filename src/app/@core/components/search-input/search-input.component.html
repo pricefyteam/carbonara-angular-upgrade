@@ -1,0 +1,11 @@
+<form [formGroup]="searchForm">
+    <div class="input-group input-group-seamless-append" [ngClass]="{'isFocus': isInputFocus}">
+        <input type="text" class="form-control input-value" [placeholder]="placeholder" formControlName="searchInput" (keyup.enter)="emitSearch()" (focus)="onFocus(true)" (blur)="onFocus(false)" />
+        <div *ngIf="searchInput.value === ''" class="btn-input" (click)="emitSearch()">
+            <i class="bi bi-search"></i>
+        </div>
+        <div *ngIf="searchInput.value !== ''" class="btn-input" (click)="resetSearch()">
+            <i class="bi bi-x"></i>
+        </div>
+    </div>
+</form>

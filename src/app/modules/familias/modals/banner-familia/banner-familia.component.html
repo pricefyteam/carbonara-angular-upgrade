@@ -1,0 +1,65 @@
+<ng-container *ngIf="(midiaFamilyInterface$ | async) as midias">
+    <div class="pim-card-header d-flex justify-content-between">
+        <div class="d-flex justify-content-start">
+            <div class="mr-2">
+                <h2 class="title">{{'BANNER' | translate}}</h2>
+            </div>
+            <i *ngIf="info" class="bi bi-info-circle-fill icon-info" [tooltip]="info" placement="right"></i>
+        </div>
+        <div>
+            <input hidden accept="image/*" #uploaderCropper type="file" [options]="options" ngFileSelect ngFileDrop [uploadInput]="uploadInput" (change)="fileChangeEvent($event)" />
+        </div>
+    </div>
+    <div class="no-images" *ngIf="midias.length === 0">
+        <div class="pim-card-content">
+            <div class="drag-drop-attach" [ngClass]="{'isHover': isHover}" ngFileDrop [options]="options" [uploadInput]="uploadInput" (uploadOutput)="onUploadOutput($event)" (change)="fileChangeEvent($event)">
+                <p class="helper-text">
+                    <i class="bi bi-cloud-upload"></i>
+                    {{ "DRAG_THE_FILE_HERE" | translate }}
+                </p>
+                <p class="or">- {{ "OR" | translate }} -</p>
+                <label class="btn btn-primary"> <input type="file" /><i class="bi bi-check-all"></i> {{ "CHOOSE_FROM_COMPUTER" | translate}} </label>
+            </div>
+        </div>
+    </div>
+    <div class="with-images" *ngIf="midias.length > 0">
+        <div class="pim-card-content">
+            <form [formGroup]="form">
+                <div class="d-flex align-content-start flex-wrap">
+                    <div class="mr-2 mb-2" *ngFor="let item of midias">
+                        <input type="radio" (click)="setMidiaMain(item)" name="image" formControlName="imageItem" [value]="item" [id]="item.id" (ngModelChange)="isValid = true" />
+                        <label [for]="item.id">
+                            <div class="container-card-image">
+                                <div class="container-menu">
+                                    <app-dropdown>
+                                        <ul class="list-icons">
+                                            <li *ngIf="!item.principal">
+                                                <a href="javascript://" (click)="setMidiaMain(item)"><i class="bi bi-star"></i> {{"MAKE_MAIN" | translate}}</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript://" (click)="removeBanner(item)"><i class="bi bi-trash"></i> {{"DELETE" | translate}}</a>
+                                            </li>
+                                        </ul>
+                                    </app-dropdown>
+                                </div>
+                                <div class="container-image">
+                                    <img [src]="item.url | normalizeImage" #image class="img-product-family" />
+                                </div>
+                            </div>
+                            <span class="width-height-image">{{ image.naturalWidth }}x{{ image.naturalHeight }} px</span>
+                        </label>
+                    </div>
+                    <div class="drag-drop-attach drag-drop-with-images mb-2" [ngClass]="{'isHover': isHover}" ngFileDrop [options]="options" [uploadInput]="uploadInput" (uploadOutput)="onUploadOutput($event)" (change)="fileChangeEvent($event)">
+                        <p class="helper-text">
+                            <i class="bi bi-cloud-upload"></i>
+                            {{ "DRAG_THE_FILE_HERE" | translate }}
+                        </p>
+                        <p class="or">- {{ "OR" | translate }} -</p>
+                        <label class="btn btn-light"> <input type="file" /><i class="bi bi-check-all"></i> {{ "CHOOSE_FROM_COMPUTER" | translate}} </label>
+                    </div>
+                    <app-modal-processing *ngIf="isLoading"></app-modal-processing>
+                </div>
+            </form>
+        </div>
+    </div>
+</ng-container>

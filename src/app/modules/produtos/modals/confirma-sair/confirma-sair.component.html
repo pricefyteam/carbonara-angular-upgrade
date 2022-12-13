@@ -1,0 +1,17 @@
+<div class="modal-center">
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-12 text-center">
+                <i class="bi bi-exclamation-triangle"></i>
+                <h1>{{ 'DO_YOU_WANT_TO_LEAVE' | translate }}?</h1>
+                <p>{{ 'YOU_CHANGED_INFORMATION_BUT_DID_NOT_SAVE_EXITING_WILL_NOT_SAVE_EDITS' | translate }}</p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 mb-2 text-right">
+                <button type="button" class="btn btn-outline-secondary mr-2" (click)="cancel()">{{ 'CANCEL' | translate }}</button>
+                <button type="button" class="btn btn-warning" (click)="confirm()"><i class="far fa-arrow-right-from-bracket"></i> {{'EXIT' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

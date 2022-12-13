@@ -1,0 +1,45 @@
+<section class="pim-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 container-flex">
+                <h1 class="title">
+                    PIM
+                    <span class="subtitle">
+                        <span> {{ "PRODUCT_INFORMATION_MANAGEMENT_SYSTEM" | translate }} </span>
+                    </span>
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container pt-3">
+    <div class="d-flex justify-content-start">
+        <div class="card active" routerLink="produtos">
+            <div class="card-body text-center">
+                <div class="icon-card">
+                    <i class="fa fa-light fa-bottle-water"></i>
+                </div>
+                <h2>{{ "PRODUCTS" | translate }}</h2>
+                <p>{{ "ENRICH_YOUR_PRODUCT_INFORMATION" | translate }}</p>
+            </div>
+        </div>
+        <div class="card active" routerLink="familias">
+            <div class="card-body text-center">
+                <div class="icon-card">
+                    <i class="fak fa-fami-lia-de-ofertas"></i>
+                </div>
+                <h2>{{ "OFFER_FAMILIES" | translate }}</h2>
+                <p>{{ "MANAGEMENT_AND_CONSULTATION_OF_OFFER_FAMILIES" | translate }}</p>
+            </div>
+        </div>
+        <div class="card active" routerLink="banco-de-imagens">
+            <div class="card-body text-center">
+                <div class="icon-card">
+                    <i class="fa fa-light fa-images"></i>
+                </div>
+                <h2>{{"IMAGE_BANK" | translate}}</h2>
+                <p>{{ "KEEP_YOUR_PRODUCT_IMAGES_ALWAYS_UP_TO_DATE" | translate }}</p>
+            </div>
+        </div>
+    </div>
+</section>

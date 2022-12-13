@@ -1,0 +1,36 @@
+@import "styles/colors.scss";
+
+::ng-deep .confirma-exclusao {
+    width: 478px !important;
+    margin: 0 auto;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.16);
+    margin-top: calc(50vh - 136px);
+
+    h1 {
+        color: map-get($colors, danger);
+        font-size: 24px;
+        line-height: 48px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: map-get($colors, dark);
+    }
+
+    .btn-danger {
+        margin-left: 15px;
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    i.bi-exclamation-circle {
+        font-size: 65px;
+        color: map-get($colors, danger);
+    }
+}

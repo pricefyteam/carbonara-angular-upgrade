@@ -1,0 +1,82 @@
+<pim-header title="{{'IMAGE_BANK' | translate}}" [goBackUrl]="['banco-de-imagens']"></pim-header>
+<section class="pim-search-container">
+    <div class="container">
+        <div class="search-info-container">
+            <div class="row">
+                <div class="col-sm-1">
+                    <h3>{{ "SEARCH" | translate }}</h3>
+                </div>
+                <div class="col-sm-11">
+                    <cmp-search-input (search)="searchItems($event)" [value]="value" placeholder="{{ 'SEARCH_BY_NAME_OR_GTIN' | translate }}"></cmp-search-input>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pim-container">
+    <div class="container">
+        <div class="pim-card-header">
+            <div class="mr-2">
+                <h2 class="title">{{ "RESULT" | translate }}</h2>
+            </div>
+        </div>
+        <div class="container-radio-box">
+            <div>
+                <input type="radio" id="all" name="type" value="" [(ngModel)]="type" (change)="changeType()" />
+                <label for="all">{{ "ALL_THE_ITENS" | translate }}</label>
+            </div>
+            <div>
+                <input type="radio" id="product" name="type" value="produto" [(ngModel)]="type" (change)="changeType()" />
+                <label for="product">{{ "MY_PRODUCTS" | translate }}</label>
+            </div>
+            <div>
+                <input type="radio" id="family" name="type" value="familia" [(ngModel)]="type" (change)="changeType()" />
+                <label for="family">{{ "MY_FAMILIES" | translate }}</label>
+            </div>
+        </div>
+        <ng-container *ngIf="products$ | async as products">
+            <div *ngIf="showItems" class="row container-products" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000" [scrollWindow]="true" (scrolled)="onScroll()">
+                <div class="col-md-3 col-sm-4" *ngFor="let product of products">
+                    <div class="card">
+                        <div class="img-logo-provider text-left">
+                            <img [src]="getProviderLogo(product.codeProvider)" *ngIf="product.codeProvider" />
+                        </div>
+                        <div (click)="detailsProduct(product)" class="card-body">
+                            <pim-image-descricao-card [item]="product" [showCode]="false"></pim-image-descricao-card>
+                            <div class="container-info-item">
+                                <div class="product-gtin">
+                                    <div *ngIf="product.gtin; else code">
+                                        <h4>{{ "GTIN" | translate }}</h4>
+                                        <p>{{ product.gtin }}</p>
+                                    </div>
+                                    <ng-template #code>
+                                        <h4>{{ "CODE" | translate }}</h4>
+                                        <p>{{ product.code }}</p>
+                                    </ng-template>
+                                </div>
+                                <div class="badge badge-secondary">
+                                    <span *ngIf="product.type === 'produto'">{{ "PRODUCT" | translate }}</span>
+                                    <span *ngIf="product.type === 'familia'">{{ "FAMILY" | translate }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="products.length === 0 && !isLoading" class="container-no-items">
+                <div>
+                    <i class="far fa-solid fa-magnifying-glass"></i>
+                    <h3>{{ "RESULT_NOT_FOUND" | translate }}</h3>
+                    <p>{{ "TRY_DOING_A_NEW_SEARCH_OR_REGISTER_A_NEW_PRODUCT_FAMILY" | translate }}.</p>
+                </div>
+            </div>
+        </ng-container>
+        <div class="row mt-2 mb-3">
+            <div class="col-12 container-spinner" *ngIf="isLoading">
+                <span>
+                    <app-spinner [size]="'md'"></app-spinner>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

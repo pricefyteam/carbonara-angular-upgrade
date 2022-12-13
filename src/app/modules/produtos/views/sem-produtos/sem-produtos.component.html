@@ -1,0 +1,11 @@
+<pim-header title="{{ 'PRODUCTS' | translate }}" [goBackUrl]="['']"></pim-header>
+<section class="pim-container">
+    <div class="container">
+        <i class="bi bi-basket"></i>
+        <h2 class="title">{{ "YOU_HAVE_NO_ADDED_PRODUCTS" | translate }}</h2>
+        <p class="subtitle">
+            <span> {{ "CLICK_ON_THE_IMPORT_PRODUCT_BUTTON_TO_START_THE_PROCESS_OF_LOADING_YOUT_PRODUCTS" | translate }}. </span>
+        </p>
+        <button type="button" (click)="abrirImportacaoProdutos()" class="btn btn-primary"><i class="bi bi-upload"></i> {{ "IMPORT_PRODUCT" | translate }}</button>
+    </div>
+</section>

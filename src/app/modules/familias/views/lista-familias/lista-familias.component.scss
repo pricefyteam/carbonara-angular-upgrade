@@ -1,0 +1,76 @@
+@import "styles/colors";
+
+.pim-container {
+    .container {
+        padding: 0 15px;
+        .pim-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .card {
+            padding: 8px 16px 16px;
+            border: 1px solid #c0c0c0;
+            border-radius: 5px;
+            height: 368px;
+
+            .badge-secondary {
+                background-color: map-get($colors, secondary) !important;
+                color: white;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: normal;
+                padding: 0 8px;
+            }
+
+            .cursor-pointer {
+                cursor: pointer;
+            }
+        }
+
+        .no-items {
+            text-align: center;
+            padding: 50px 0;
+
+            i {
+                font-size: 48px;
+                color: map-get($colors, secondary);
+            }
+
+            h3 {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 700;
+                color: map-get($colors, secondary);
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+        }
+
+        .container-spinner {
+            padding: 50px 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .container-families {
+        .col-md-3 {
+            flex: 0 0 16.6666666667%;
+            max-width: 16.6666666667%;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .pim-container {
+        padding: 0 10px;
+
+        .container {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+}

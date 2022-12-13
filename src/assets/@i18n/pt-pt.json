@@ -1,0 +1,17 @@
+﻿{
+  "INDEX_ON_FTS": "Indexar na busca global",
+  "INDEX_ON_FTS_SUCCESS": "Indexação na busca global foi realizada com sucesso",
+  "TO_SELECT_ADD_PRODUCTS_YOU_MUST_SEARCH_AND_CHOOSE_ONE_OR_MORE_PRODUCTS": "Para selecionar adicionar produto(s), você deve buscar e escolher um ou mais produtos",
+  "MANAGEMENT_AND_CONSULTATION_OF_OFFER_FAMILIES": "Gestão e consulta das famílias de ofertas",
+  "CLICK_ON_THE_ADD_FAMILY_BUTTON_TO_START_THE_PROCESS_OF_REGISTERING_AND_OFFER_FAMILY": "Clique no botão 'Adicionar Família' para iniciar o processo de cadastro de uma família de ofertas",
+  "CLICK_ON_THE_IMPORT_PRODUCT_BUTTON_TO_START_THE_PROCESS_OF_LOADING_YOUT_PRODUCTS": "Clique no botão 'Importar Produtos' para iniciar o processo de carga dos seus produtos",
+  "NO_FAMILY_FOUND_TRY_CHANGING_YOUR_SEARCH_CRITERIA": "Nenhuma família foi encontrada, tente alterar seus critérios de busca",
+  "THESE_ARE_THE_IMAGES_AVAILABLE_FOR_THE_PRODUCT": "Essas são as imagens disponíveis para o produto, se quiser poderás fazer upload de novas imagens, basta selecionar no computador ou arrastar a imagem para o local",
+  "THESE_ARE_THE_IMAGES_AVAILABLE_FOR_THE_FAMILY": "Essas são as imagens disponíveis para a família, se quiser poderás fazer upload de novas imagens, basta selecionar no computador ou arrastar a imagem para o local",
+  "THIS_IS_THE_DESCRIPTION_THAT_WILL_BE_USED_AS_A_HIGHLIGHT_IN_CAMPAINGS": "Essa é a descrição que será usada como destaque nas campanhas e nos cartazes, pode ser ajustada para ser mais amigável ao cliente",
+  "THIS_IS_A_DESCRIPTION_THAT_CAN_BE_USED_AS_PART_OF_THE_MAIN_DESCRIPTION": "Essa é uma descrição que poderá ser usada como parte da descrição principal, porém obtendo menos destaque, também pode ser ajustada",
+  "YOU_CHANGED_INFORMATION_BUT_DID_NOT_SAVE_EXITING_WILL_NOT_SAVE_EDITS": "Você alterou informações mas não salvou, se sair não salvará as edições",
+  "THE_IMAGE_BANK_FOR_YOU_TO_TRANSFORM_YOUR_BUSINESS": "O banco de imagens para você transformar seu negócio",
+  "KEEP_YOUR_PRODUCT_IMAGES_ALWAYS_UP_TO_DATE": "Mantenha as imagens dos seus produtos sempre atualizadas",
+  "TRY_DOING_A_NEW_SEARCH_OR_REGISTER_A_NEW_PRODUCT_FAMILY": "Tente fazer uma nova pesquisa ou cadastre um novo produto/família"
+}

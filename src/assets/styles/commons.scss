@@ -1,0 +1,53 @@
+@import "colors";
+
+.pim-container {
+    .container {
+        @extend .pim-card;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: calc(100vw - 120px);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background: lighten(#e0e0e0, 8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: darken(#e0e0e0, 10);
+}
+
+.fa,
+.far,
+.fas {
+    font-family: "Font awesome 6 Pro" !important;
+}
+
+.fak {
+    font-family: "Font Awesome Kit" !important;
+}
+
+.tooltip {
+    white-space: normal !important;
+}
+
+.tooltip-inner {
+    text-transform: none !important;
+}

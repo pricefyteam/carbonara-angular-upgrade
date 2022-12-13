@@ -1,0 +1,3 @@
+<ng-container *ngIf="agrupadores$ | async as agrupadores">
+    <app-card-informacoes *ngFor="let agrupador of agrupadores" [productCode]="productCode" [agrupador]="agrupador"></app-card-informacoes>
+</ng-container>

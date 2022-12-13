@@ -1,0 +1,20 @@
+.pim-card {
+    background-color: white;
+    border: 1px solid #c2c2c2;
+    border-radius: 4px;
+
+    .pim-card-header {
+        padding: 16px;
+
+        .title {
+            color: map-get($colors, dark);
+            font-weight: bold;
+            font-size: 18px;
+            margin: 0;
+        }
+    }
+
+    .pim-card-content {
+        padding: 0 16px 16px 16px;
+    }
+}

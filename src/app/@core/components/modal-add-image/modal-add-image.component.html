@@ -1,0 +1,37 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ 'ADJUST_IMAGE' | translate }}</h4>
+</div>
+<div class="modal-body">
+    <div class="container-cropper">
+        <image-cropper
+            [imageFile]="imageChangedEvent"
+            [maintainAspectRatio]="false"
+            [containWithinAspectRatio]="containWithinAspectRatio"
+            [aspectRatio]="1 / 1"
+            [resizeToWidth]="0"
+            [cropperMinWidth]="0"
+            [onlyScaleDown]="false"
+            [roundCropper]="false"
+            [canvasRotation]="canvasRotation"
+            [transform]="transform"
+            [alignImage]="'center'"
+            [style.display]="showCropper ? null : 'none'"
+            format="png"
+            (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded()"
+            (cropperReady)="cropperReady($event)"
+            (loadImageFailed)="loadImageFailed()"
+            autoCrop="false"
+        ></image-cropper>
+    </div>
+    <h3>{{ 'PREVIEW' | translate }}</h3>
+    <div class="container-image-cropped">
+        <img [src]="croppedImage" class="img-fluid image-cropped" />
+        <div class="image-name">{{ nameImage }}</div>
+        <div class="image-size">{{ width }}x{{ height }} px</div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="onClose(this.bsModalRef)">{{'CANCEL' | translate}}</button>
+    <button type="button" class="btn btn-primary" (click)="onUpload(this.bsModalRef)" [disabled]="isUploading"><span *ngIf="!isUploading">{{ 'SAVE_IMAGE' | translate }}</span><span *ngIf="isUploading">{{ 'SENDING' | translate }}</span></button>
+</div>

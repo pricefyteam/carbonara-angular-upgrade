@@ -1,0 +1,15 @@
+<div class="image text-center">
+    <div *ngIf="hasImage; else placeholder" [ngClass]="{'inactive': isInactive}">
+        <img [src]="item.urlThumbnailMain | normalizeImage" />
+    </div>
+    <ng-template #placeholder>
+        <i class="bi bi-image"></i>
+    </ng-template>
+</div>
+<div class="product-name d-flex align-items-end">
+    <h3>{{ item.mainDescription }}</h3>
+</div>
+<div class="product-gtin" *ngIf="showCode">
+    <h4>{{"CODE" | translate}}</h4>
+    <p>{{ item.code }}</p>
+</div>

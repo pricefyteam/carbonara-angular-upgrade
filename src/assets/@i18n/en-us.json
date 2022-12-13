@@ -1,0 +1,17 @@
+{
+  "INDEX_ON_FTS": "Index on global search engine",
+  "INDEX_ON_FTS_SUCCESS": "Indexing on global search engine was successful",
+  "TO_SELECT_ADD_PRODUCTS_YOU_MUST_SEARCH_AND_CHOOSE_ONE_OR_MORE_PRODUCTS": "To select add product(s), you must search and choose one or more products",
+  "MANAGEMENT_AND_CONSULTATION_OF_OFFER_FAMILIES": "Management and consultation of offer families",
+  "CLICK_ON_THE_ADD_FAMILY_BUTTON_TO_START_THE_PROCESS_OF_REGISTERING_AND_OFFER_FAMILY": "Click on the 'Add Family' button to start the process of registering an offer family",
+  "CLICK_ON_THE_IMPORT_PRODUCT_BUTTON_TO_START_THE_PROCESS_OF_LOADING_YOUT_PRODUCTS": "Click on the 'Import Products' button to start the process of loading your products",
+  "NO_FAMILY_FOUND_TRY_CHANGING_YOUR_SEARCH_CRITERIA": "No families found, try changing your search criteria",
+  "THESE_ARE_THE_IMAGES_AVAILABLE_FOR_THE_PRODUCT": "These are the images available for the product, if you want you can upload new images, just select them on your computer or drag the image to the location",
+  "THESE_ARE_THE_IMAGES_AVAILABLE_FOR_THE_FAMILY": "These are the images available for the family, if you want you can upload new images, just select them on your computer or drag the image to the location",
+  "THIS_IS_THE_DESCRIPTION_THAT_WILL_BE_USED_AS_A_HIGHLIGHT_IN_CAMPAINGS": "This is the description that will be used as a highlight in campaigns and posters, it can be adjusted to be more customer friendly",
+  "THIS_IS_A_DESCRIPTION_THAT_CAN_BE_USED_AS_PART_OF_THE_MAIN_DESCRIPTION": "This is a description that can be used as part of the main description, but with less prominence, it can also be adjusted",
+  "YOU_CHANGED_INFORMATION_BUT_DID_NOT_SAVE_EXITING_WILL_NOT_SAVE_EDITS": "You changed information but did not save, exiting will not save edits",
+  "THE_IMAGE_BANK_FOR_YOU_TO_TRANSFORM_YOUR_BUSINESS": "The image bank for you to transform your business",
+  "KEEP_YOUR_PRODUCT_IMAGES_ALWAYS_UP_TO_DATE": "Keep your product images always up to date",
+  "TRY_DOING_A_NEW_SEARCH_OR_REGISTER_A_NEW_PRODUCT_FAMILY": "Try doing a new search or register a new product/family"
+}

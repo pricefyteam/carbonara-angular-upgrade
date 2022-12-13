@@ -1,0 +1,133 @@
+@import "styles/colors";
+
+:host ::ng-deep {
+    .ng-select {
+        .ng-select-container {
+            border: 1px solid #8f8f8f;
+            width: 288px;
+        }
+
+        &.ng-select.ng-select-opened > .ng-select-container {
+            border: 2px solid map-get($colors, primary);
+
+            .ng-arrow-wrapper .ng-arrow {
+                color: map-get($colors, primary);
+            }
+        }
+
+        &.ng-select-opened.ng-select-bottom > .ng-select-container {
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        &.ng-select-focused:not(.ng-select-opened) > .ng-select-container {
+            border: 1px solid #8f8f8f;
+            box-shadow: none;
+        }
+
+        .ng-arrow-wrapper .ng-arrow {
+            border: none;
+            position: absolute;
+            color: #8f8f8f;
+            font-size: 16px;
+            top: -11px;
+            right: 25px;
+        }
+
+        .ng-arrow-wrapper .ng-arrow::before {
+            content: "\f282";
+            font-family: bootstrap-icons !important;
+        }
+    }
+}
+
+.pim-container {
+    .container {
+        padding: 0 15px;
+        .pim-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .card {
+            padding: 8px 16px 16px;
+            border: 1px solid #c0c0c0;
+            border-radius: 5px;
+            height: 368px;
+
+            .badge-secondary {
+                background-color: map-get($colors, secondary) !important;
+                color: white;
+                font-size: 14px;
+                line-height: 24px;
+                font-weight: normal;
+                padding: 0 8px;
+            }
+
+            .cursor-pointer {
+                cursor: pointer;
+            }
+        }
+
+        .no-items {
+            text-align: center;
+            padding: 50px 0;
+
+            i {
+                font-size: 48px;
+                color: map-get($colors, primary);
+            }
+
+            h3 {
+                font-size: 16px;
+                line-height: 24px;
+                font-weight: 700;
+                color: map-get($colors, dark);
+                margin-top: 10px;
+                margin-bottom: 0;
+            }
+        }
+
+        .container-spinner {
+            padding: 50px 0;
+        }
+
+        .icon-info {
+            color: #cfdbe2;
+            margin-top: 2px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .container-products {
+        .col-md-3 {
+            flex: 0 0 16.6666666667%;
+            max-width: 16.6666666667%;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .pim-container {
+        padding: 0 10px;
+
+        .container {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+}
+
+.btn-import {
+    margin: 0 12px;
+    font-size: 12px;
+    box-shadow: none;
+    border-radius: 4px;
+    border-color: #0b877d;
+    background-color: white;
+    color: #0b877d;
+    transition: background-color 0.3s;
+}

@@ -1,0 +1,23 @@
+@import "../../../../../pricefyfrontlib/app/shared/styles/pricefy/variables";
+
+.wrapper {
+    background: #403356;
+    color: white;
+}
+
+.text-muted {
+    color: white !important;
+}
+
+.input-group {
+    img {
+        width: 300px;
+    }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: white !important;
+}

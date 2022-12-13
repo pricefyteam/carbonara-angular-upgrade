@@ -1,0 +1,50 @@
+<pim-header title="{{ 'OFFER_FAMILIES' | translate }}" [goBackUrl]="['']">
+    <button type="button" (click)="abrirModalFamiliaManipulacao()" class="btn btn-primary">{{ "CREATE_NEW_FAMILY" | translate }}</button>
+</pim-header>
+<section class="pim-container" *ngIf="{isLoading: (isLoading$ | async), hasMoreItems: (hasMoreItems$ | async)} as data">
+    <div class="container">
+        <div class="pim-card-header">
+            <h2 class="title">{{"FAMILIES" | translate}}</h2>
+            <cmp-search-input (search)="searchItems($event)" [resetForm]="resetForm"></cmp-search-input>
+        </div>
+        <ng-container *ngIf="families$ | async as families">
+            <div class="row container-families" infinite-scroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000" [scrollWindow]="true" (scrolled)="onScroll(data.hasMoreItems)">
+                <div class="col-md-3 col-sm-4" *ngFor="let family of families">
+                    <div class="card">
+                        <app-dropdown class="text-right">
+                            <ul class="list-icons">
+                                <li>
+                                    <a href="javascript://" (click)="detailFamily(family)"><i class="bi bi-eye"></i> {{ "VIEW" | translate}}</a>
+                                </li>
+                                <li>
+                                    <a href="javascript://" (click)="indexFamily(family)"><i class="bi bi-sort-alpha-down"></i> {{"INDEX_ON_FTS" | translate}}</a>
+                                </li>
+                                <li>
+                                    <a href="javascript://" (click)="removeFamily(family)"><i class="bi bi-trash"></i> {{"DELETE" | translate}}</a>
+                                </li>
+                            </ul>
+                        </app-dropdown>
+                        <div (click)="detailFamily(family)" class="cursor-pointer">
+                            <pim-image-descricao-card [item]="family"></pim-image-descricao-card>
+                            <div class="mt-3">
+                                <span class="badge badge-secondary">{{ family.products.length }} {{"PRODUCTS" | translate}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="families.length === 0 && !data.isLoading" class="col-12 no-items">
+                    <i class="bi bi-search"></i>
+                    <h3>{{ "FAMILY_NOT_FOUND" | translate }}</h3>
+                    <p>{{ "NO_FAMILY_FOUND_TRY_CHANGING_YOUR_SEARCH_CRITERIA" | translate }}</p>
+                </div>
+            </div>
+        </ng-container>
+        <div class="row mt-2 mb-3">
+            <div class="col-12 container-spinner" *ngIf="data.isLoading">
+                <span>
+                    <app-spinner [size]="'md'"></app-spinner>
+                </span>
+            </div>
+        </div>
+    </div>
+</section>

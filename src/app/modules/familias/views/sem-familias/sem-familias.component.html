@@ -1,0 +1,11 @@
+<pim-header title="{{ 'OFFER_FAMILIES' | translate }}" [goBackUrl]="['']"></pim-header>
+<section class="pim-container">
+    <div class="container">
+        <i class="bi bi-file-richtext"></i>
+        <h2 class="title">{{ "YOU_HAVE_NO_ADDED_OFFER_FAMILY" | translate }}</h2>
+        <p class="subtitle">
+            <span> {{ "CLICK_ON_THE_ADD_FAMILY_BUTTON_TO_START_THE_PROCESS_OF_REGISTERING_AND_OFFER_FAMILY" | translate }}. </span>
+        </p>
+        <button type="button" (click)="abrirModalFamiliaManipulacao()" class="btn btn-primary"><i class="bi bi-plus"></i> {{ "ADD" | translate }} {{ "FAMILY" | translate }}</button>
+    </div>
+</section>

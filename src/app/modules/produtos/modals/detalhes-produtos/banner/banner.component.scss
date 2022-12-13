@@ -1,0 +1,153 @@
+@import "styles/colors";
+
+.with-images {
+    input[type="radio"] {
+        display: none;
+    }
+
+    label {
+        .container-card-image {
+            width: 165px;
+            height: 160px;
+            border: 1px solid #c0c0c0;
+            border-radius: 5px;
+            background-color: white;
+            padding: 0 8px 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .container-menu {
+                text-align: right;
+                width: 160px;
+                margin-top: -5px;
+            }
+
+            .container-image {
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                height: 116px;
+                width: 160px;
+
+                .img-product-family {
+                    max-width: 120px;
+                    max-height: 116px;
+                }
+            }
+        }
+
+        .width-height-image {
+            color: #c0c0c0;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 16px;
+        }
+    }
+
+    :checked + label {
+        .container-card-image {
+            border: 2px solid map-get($colors, primary);
+        }
+
+        .width-height-image {
+            color: #494949;
+        }
+    }
+
+    :disabled + label {
+        .container-card-image {
+            opacity: 50%;
+            border: 1px solid #c0c0c0;
+        }
+
+        .width-height-image {
+            color: #c0c0c0;
+        }
+    }
+
+    .pim-card-content {
+        padding-bottom: 0;
+    }
+}
+
+.container-images {
+    margin-top: 16px;
+}
+
+.drag-drop-attach {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+    background: #eaeaea;
+    border: 2px dashed #a4a4a4;
+    border-radius: 4px;
+    width: 100%;
+
+    &.isHover {
+        background: #cfcfcf !important;
+        border-color: #7a7a7a !important;
+    }
+
+    &.smaller {
+        min-height: 65px;
+        align-self: center;
+        width: 285px;
+
+        .helper-text {
+            margin-bottom: 0;
+            margin-top: 10px;
+
+            label {
+                cursor: pointer;
+                color: map-get($colors, primary);
+            }
+        }
+    }
+
+    input[type="file"] {
+        display: none;
+    }
+
+    .helper-text {
+        font-size: 16px;
+        color: #636262;
+        margin-bottom: 5px;
+    }
+
+    .or {
+        font-weight: bold;
+        font-size: 14px;
+        color: map-get($colors, dark);
+        margin-bottom: 7px;
+    }
+}
+
+.drag-drop-with-images {
+    width: auto;
+    height: 160px;
+    background: transparent;
+    padding: 0 10px;
+
+    .helper-text {
+        font-size: 12px;
+
+        i {
+            font-size: 16px;
+        }
+    }
+}
+
+.icon-info {
+    color: #cfdbe2;
+    margin-top: 2px;
+}
+
+.btn {
+    cursor: pointer;
+}

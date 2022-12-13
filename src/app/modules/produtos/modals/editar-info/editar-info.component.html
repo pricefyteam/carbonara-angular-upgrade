@@ -1,0 +1,44 @@
+<ng-container *ngIf="{product: (product$ | async)} as data">
+    <form [formGroup]="payload" *ngIf="payload" (ngSubmit)="submit(data.product)">
+        <div class="modal-editar-produto">
+            <div class="modal-header">
+                <h4 class="modal-title">{{"EDIT" | translate}} - {{agrupador.rotulo}}</h4>
+                <div>
+                    <button type="button" class="modal-close" (click)="close()">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-center">
+                <div class="modal-body">
+                    <section class="pim-container">
+                        <div class="container">
+                            <div class="pim-card-header d-flex justify-content-between px-0">
+                                <div class="d-flex justify-content-start">
+                                    <div class="mr-2">
+                                        <h2 class="title">{{agrupador.rotulo}}</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <ng-container *ngFor="let item of agrupador.itens">
+                                    <div class="col-6">
+                                        <app-fieldrow [abstractControl]="payload.get(item.nome)">
+                                            <app-label-info title="{{item.rotulo}}"></app-label-info>
+                                            <input class="cmp-fieldrow-control" type="text" [formControlName]="item.nome" [placeholder]="item.rotulo" />
+                                        </app-fieldrow>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="float-right mr-4 mb-2">
+                    <div class="btn-salvar">
+                        <button type="submit" class="btn btn-primary">{{"SAVE" | translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</ng-container>
