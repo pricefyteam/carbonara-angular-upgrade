@@ -4,10 +4,25 @@ import { MenuService } from "pricefyfrontlib/app/core/menu/menu.service";
 
 import { AuthGuardService } from "../../pricefyfrontlib/app/core/auth/auth-guard.service";
 import { LayoutComponent } from "../../pricefyfrontlib/app/layout/layout.component";
-import { AppMenus } from "./app.menus";
 import { HomeComponent } from "./modules/pages/home/home.component";
+import { PlaygroundComponent } from '../app/@core/components/playground/playground.component';
 
 const routes: Routes = [
+    {
+        path: 'playground',
+        component: PlaygroundComponent,
+        canActivate: [AuthGuardService],
+        data: {
+          toolbar: {
+            id: 1,
+            title: 'Playground',
+            subtitle: 'Teste seus componentes aqui',
+            back: { router: '' },
+            btnLabel: '',
+            btnRouter: '',
+          },
+        },
+      },
     {
         path: "",
         data: { role: "MN-GERENCIAMENTO-PIM" },
@@ -65,6 +80,6 @@ const routes: Routes = [
 })
 export class AppRoutingModule {
     constructor(private menuService: MenuService) {
-        this.menuService.generateMenu(AppMenus.menus());
+        this.menuService.generateMenu();
     }
 }

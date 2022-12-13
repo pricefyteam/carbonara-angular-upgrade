@@ -5,15 +5,18 @@
 -   Clone este repositório e faça checkout na branch `dev`;
 -   No diretório do projeto, instale as dependências usando `npm install`;
 -   Inicialize o submodulo (pricefyfrontlib) executando o comando `git submodule update --init --recursive`;
--   Para desenvolvimento local, faça checkout na branch `release-candidate-carbonara` no submodulo pricefyfrontlib, executando o comando `git checkout release-candidate-carbonara && git pull origin release-candidate-carbonara`.
 -   Segue todos os comandos em ordem:
     -   `git clone git@github.com:pricefyteam/pricefy-pim-ui.git`
     -   `cd pricefy-pim-ui`
     -   `git checkout dev`
+    -   `Renomeie o arquivo .npmrc.example para .npmrc`
+    -   `Coloque os seus tokens no arquivo npmrc`
     -   `npm install`
-    -   `git submodule update --force --recursive --init --remote`
+    -   ` git submodule add git@github.com:pricefyteam/pricefy-frontlib.git`
     -   `cd pricefyfrontlib`
-    -   `git checkout release-candidate-carbonara && git pull origin release-candidate-carbonara`
+    -   `git checkout angular-update-henrique && git pull origin angular-update-henrique`
+    -   `Adicione a sua pasta src do projeto a ser migrado na raiz do projeto`
+    - `Caso você queira utilizar os componentes do novo Design System, siga o passo a passo a seguir: ` [components pricefy] (https://github.com/pricefyteam/pricefy-components-ui)
 
 ## Colocando para rodar
 

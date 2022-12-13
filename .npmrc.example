@@ -1,0 +1,5 @@
+@fortawesome:registry=https://npm.fontawesome.com/
+//npm.fontawesome.com/:_authToken={YOUR_TOKEN}
+
+@pricefyteam:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken={YOUR_TOKEN}

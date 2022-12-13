@@ -4,7 +4,7 @@
 
 export const environment = {
     production: true,
-    configFile: "assets/config/config.prod.json",
+    configFile: "assets/config/config.stage.json",
 
     /**
      * Configuração do envio de arquivos via upload:

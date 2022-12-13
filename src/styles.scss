@@ -35,7 +35,7 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
 // Folha de estilo do toast
-@import "~ngx-toastr/toastr";
+// @import "~ngx-toastr/toastr";
 
 // folhas de estilo da ui de PIM
 @import "assets/styles/commons";
@@ -45,3 +45,5 @@
 @import "assets/styles/modal";
 @import "assets/styles/list-icons";
 @import "assets/styles/toasts";
+
+@import '../node_modules/@pricefyteam/system-design/src/assets/scss/_main.scss';

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { CustomValidators } from "ngx-custom-validators";
 import { SettingsService } from "../../../../../pricefyfrontlib/app/core/settings/settings.service";
 
 @Component({
@@ -12,8 +13,8 @@ export class RegisterComponent implements OnInit {
     passwordForm: FormGroup;
 
     constructor(public settings: SettingsService, fb: FormBuilder) {
-        let password = new FormControl("", [Validators.required]);
-        let certainPassword = new FormControl("", [Validators.required]);
+        let password = new FormControl("", Validators.compose([Validators.required, Validators.pattern("^[a-zA-Z0-9]{6,10}$")]));
+        let certainPassword = new FormControl("", [Validators.required, CustomValidators.equalTo(password)]);
 
         this.passwordForm = fb.group({
             password: password,
@@ -21,7 +22,7 @@ export class RegisterComponent implements OnInit {
         });
 
         this.valForm = fb.group({
-            email: [null, [Validators.required]],
+            email: [null, Validators.compose([Validators.required, CustomValidators.email])],
             accountagreed: [null, Validators.required],
             passwordGroup: this.passwordForm,
         });

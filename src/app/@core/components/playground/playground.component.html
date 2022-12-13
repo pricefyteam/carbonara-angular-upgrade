@@ -1,0 +1,524 @@
+<div style="padding: 25px">
+  <!-- Badge -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Badge</mat-card-title>
+    <div style="width: 90px">
+      <pricefy-app-badge
+        [chip]="chip"
+        [bgColor]="'#0b877d'"
+        [width]="'auto'"
+        (badgeClick)="onClick($event)"
+      >
+        <i class="fa fa-store" style="color: #ffffff; font-size: 24px"></i>
+      </pricefy-app-badge>
+    </div>
+  </mat-card>
+
+  <!-- Blank state-->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Blank State</mat-card-title>
+    <pricefy-blank-state
+      [title]="title"
+      [icon]="icon"
+      [text]="text"
+      [outlinedIcon]="outlinedIcon"
+      [raisedIcon]="raisedIcon"
+      [outlinedBtnLabel]="outlinedBtnLabel"
+      [raisedBtnLabel]="raisedBtnLabel"
+      (outlinedBtnEmit)="(onClick)"
+      (raisedBtnEmit)="(onClick)"
+    ></pricefy-blank-state>
+  </mat-card>
+
+  <!-- Buttons -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Butttons</mat-card-title>
+    <div class="row">
+      <div class="col-md-2">
+        <pricefy-free-buttons
+          [icon]="'fa-light fa-pen'"
+          [label]="'teste'"
+          (btnClick)="onClick('free btn')"
+        ></pricefy-free-buttons>
+      </div>
+      <div class="col-md-4">
+        <!-- Buttons tab -->
+        <pricefy-tab-buttons
+          [label]="'Label'"
+          [value]="'9999'"
+          [borderColor]="'#075952'"
+          [textColor]="'#FFFFFF'"
+          [bgColor]="'#075952'"
+        >
+        </pricefy-tab-buttons>
+      </div>
+      <div class="col-md-2">
+        <pricefy-button-raised
+          [large]="large"
+          [color]="color"
+          [label]="labelRaised"
+          (btnClick)="onClick('raised btn')"
+          [disabled]="disabled"
+          [icon]="iconRaised"
+        >
+        </pricefy-button-raised>
+      </div>
+      <div class="col-md-2">
+        <pricefy-button-outlined
+          [large]="large"
+          [color]="color"
+          [disabled]="disabled"
+          [label]="label"
+          [icon]="icon"
+          (btnClick)="onClick('btn outlined')"
+        >
+        </pricefy-button-outlined>
+      </div>
+      <div class="col-md-2">
+        <pricefy-button-link [link]="link"></pricefy-button-link>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <pricefy-button-dropdown
+          [btnType]="btnType"
+          [color]="color"
+          [label]="label"
+          [icon]="iconRaised"
+          [dropdownBtn]="[1, 2, 3]"
+          [large]="large"
+          (btnClick)="onClick('Droppdown')"
+        ></pricefy-button-dropdown>
+      </div>
+    </div>
+  </mat-card>
+
+  <!-- Card Hub -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Card Hub</mat-card-title>
+    <pricefy-card-hub
+      [item]="item"
+      [router]="item.router"
+      [badge]="item.badge"
+      [title]="item.title"
+      [description]="item.description"
+      (cardClick)="onClick($event)"
+    ></pricefy-card-hub>
+  </mat-card>
+
+  <!-- Cards -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Cards Component</mat-card-title>
+    <ul style="display: flex; flex-wrap: wrap">
+      <li
+        *ngFor="let item of cardContent"
+        style="list-style: none; margin: 5px; width: 220px"
+      >
+        <pricefy-cards
+          [title]="item.title"
+          [subtitle]="item.subtitle"
+          [storeIcon]="item.storeIcon"
+          [storeName]="item.storeName"
+          [chips]="item.chips"
+          [image]="item.image"
+          [lastUpdate]="item.lastUpdate"
+          [button]="item.button"
+          [actions]="item.actions"
+          [statusColor]="item.statusColor"
+          [statusObject]="item.statusObject"
+          [campaingCardType]="item.campaingCardType"
+          (cardButtonClick)="onClick('cardButton')"
+          (cardClick)="onClick('card')"
+          (menuClick)="onClick($event)"
+          (slideClick)="onClick($event)"
+        ></pricefy-cards>
+      </li>
+    </ul>
+  </mat-card>
+
+  <!-- Chips -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Chips Component</mat-card-title>
+
+    <pricefy-chips-outlined
+      [label]="label"
+      [color]="color"
+      [icon]="iconChips"
+      (chipsClick)="onClick('chips')"
+    ></pricefy-chips-outlined>
+
+    <pricefy-chips
+      [label]="label"
+      [color]="color"
+      [icon]="iconChips"
+      (chipsClick)="onClick('chips')"
+    ></pricefy-chips>
+
+    <pricefy-chips-outlined
+      [label]="label"
+      [color]="'error'"
+      [icon]="iconChips"
+      (chipsClick)="onClick('chips')"
+    ></pricefy-chips-outlined>
+
+    <pricefy-chips
+      [label]="label"
+      [color]="'error'"
+      [icon]="iconChips"
+      (chipsClick)="onClick('chips')"
+    ></pricefy-chips>
+
+    <pricefy-chips-outlined
+      [label]="label"
+      [color]="'warn'"
+      [icon]="iconChips"
+      (chipsClick)="onClick('chips')"
+    ></pricefy-chips-outlined>
+
+    <pricefy-chips
+      [label]="label"
+      [color]="'warn'"
+      [icon]="iconChips"
+      (chipsClick)="onClick('chips')"
+    ></pricefy-chips>
+  </mat-card>
+
+  <!-- Comments -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Comments Component</mat-card-title>
+
+    <pricefy-comments
+      [icon]="iconComments"
+      [comments]="comments"
+      (changeComment)="changeComment($event)"
+    ></pricefy-comments>
+  </mat-card>
+
+  <!-- loader -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>loader Component</mat-card-title>
+    <pricefy-custom-loader [brand]="brand"></pricefy-custom-loader>
+  </mat-card>
+
+  <!-- Dialog -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Dialog Component</mat-card-title>
+    <button mat-raised-button color="primary" (click)="modelDialog = true">
+      Open dialog
+    </button>
+    <br />
+    <pricefy-dialog
+      [title]="'Dialog'"
+      [width]="'90%'"
+      [model]="modelDialog"
+      [headerSuperCard]="false"
+      [header]="true"
+      (closeClick)="modelDialog = false"
+    >
+      <div class="content">Conteúdo</div>
+    </pricefy-dialog>
+  </mat-card>
+
+  <!-- Forms -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Form example</mat-card-title>
+
+    <form novalidate [formGroup]="formAtribute">
+      <pricefy-input
+        [item]="inputs[0]"
+        [mask]="inputs[0].mask"
+        [type]="inputs[0].type"
+        [label]="inputs[0].label"
+        [hint]="inputs[0].hint"
+        [control]="inputs[0].control"
+        [formAtribute]="formAtribute"
+        (eventClicked)="childEventClicked($event)"
+        (blurEvent)="onBlurEvent($event)"
+        (focusEvent)="onFocusEvent($event)"
+      ></pricefy-input>
+      <br />
+      <pricefy-input
+        [item]="inputs[1]"
+        [type]="inputs[1].type"
+        [label]="inputs[1].label"
+        [icon]="inputs[1].icon"
+        [placeholder]="inputs[1].placeholder"
+        [hint]="inputs[1].hint"
+        [formAtribute]="formAtribute"
+        [iconTooltip]="inputs[1].iconTooltip"
+        [infoTooltip]="inputs[1].infoTooltip"
+        [control]="inputs[1].control"
+        (eventClicked)="childEventClicked($event)"
+        (blurEvent)="onBlurEvent($event)"
+        (focusEvent)="onFocusEvent($event)"
+      ></pricefy-input>
+      <br />
+
+      <pricefy-input
+        [item]="inputs[2]"
+        [type]="inputs[2].type"
+        [currencyOptions]="inputs[2].currencyOptions"
+        [label]="inputs[2].label"
+        [icon]="inputs[2].icon"
+        [placeholder]="inputs[2].placeholder"
+        [iconTooltip]="inputs[2].iconTooltip"
+        [infoTooltip]="inputs[2].infoTooltip"
+        [hint]="inputs[2].hint"
+        [formAtribute]="formAtribute"
+        [control]="inputs[2].control"
+        (eventClicked)="childEventClicked($event)"
+        (blurEvent)="onBlurEvent($event)"
+        (focusEvent)="onFocusEvent($event)"
+      ></pricefy-input>
+      <br />
+
+      <pricefy-select
+        [list]="selectList"
+        [label]="'Select multiple'"
+        [formAtribute]="formAtribute"
+        [control]="'select'"
+        [iconTooltip]="'fa-solid fa-circle-info'"
+        [infoTooltip]="'tooltip teste'"
+        [multiple]="true"
+        (selectEvent)="onSelectEvent($event)"
+      ></pricefy-select>
+
+      <pricefy-select
+        [list]="selectList"
+        [formAtribute]="formAtribute"
+        [control]="'select1'"
+        [label]="'Select list'"
+        [placeholder]="'teste'"
+        [multiple]="false"
+        (selectEvent)="onSelectEvent($event)"
+      ></pricefy-select>
+      <br />
+      <pricefy-text-area
+        [small]="true"
+        [formAtribute]="formAtribute"
+        [control]="'textarea'"
+        [label]="'Observações'"
+      ></pricefy-text-area>
+      <br />
+      <pricefy-datepicker
+        [formAtribute]="formAtribute"
+        [control]="'calendar'"
+        [label]="'Calendario'"
+        [minDate]="todayDate"
+        [weekOnly]="true"
+        [startDate]="startDate"
+        (changeDate)="changeDate($event)"
+      ></pricefy-datepicker>
+
+      <br />
+      <pricefy-datepicker
+        [formAtribute]="formAtribute"
+        [label]="'Calendario'"
+        [minDate]="todayDate"
+        [weekOnly]="true"
+        [startDate]="startDate"
+        [disabled]="false"
+        [control]="'calendar1'"
+        (changeDate)="changeDate($event)"
+      ></pricefy-datepicker>
+
+      <br />
+      <pricefy-datepicker
+        [formAtribute]="formAtribute"
+        [startControl]="'startData'"
+        [endControl]="'endData'"
+        [label]="'Calendario'"
+        [minDate]="todayDate"
+        [startDate]="startDate"
+        [rangeDatepicker]="true"
+        [labelStartDate]="'Data de inicio'"
+        [labelEndDate]="'Data Fim'"
+        [control]="'calendar2'"
+        (changeDate)="changeDateRange($event)"
+      ></pricefy-datepicker>
+      <br />
+      <pricefy-checkbox
+        [label]="'Exemplo'"
+        [formAtribute]="formAtribute"
+        [control]="'checked1'"
+      ></pricefy-checkbox>
+
+      <br />
+      <pricefy-checkbox
+        [label]="'Exemplo'"
+        [formAtribute]="formAtribute"
+        [control]="'checked2'"
+      ></pricefy-checkbox>
+
+      <br />
+      <pricefy-radio
+        [items]="itemsRadio"
+        [formAtribute]="formAtribute"
+        [control]="'radio'"
+      ></pricefy-radio>
+
+      <br />
+      <pricefy-counter
+        [formAtribute]="formAtribute"
+        [control]="'counter'"
+      ></pricefy-counter>
+
+      <br />
+      <pricefy-switch
+        [formAtribute]="formAtribute"
+        [control]="'switch'"
+      ></pricefy-switch>
+      <br />
+      <br />
+      <br />
+
+      <pricefy-button-raised
+        [disabled]="!formAtribute.valid"
+        [label]="'submit'"
+      >
+      </pricefy-button-raised>
+    </form>
+  </mat-card>
+
+  <!-- Notifications -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Notification Component</mat-card-title>
+    <pricefy-button-raised
+      color="primary"
+      (click)="openNotification()"
+      [label]="'Open notification'"
+    >
+    </pricefy-button-raised>
+
+    <!-- Notifications-->
+    <pricefy-notifications
+      [model]="notificationModel"
+      [icon]="notifications.icon"
+      [title]="notifications.title"
+      [text]="notifications.text"
+      [primaryColor]="notifications.primaryColor"
+      [primaryButton]="notifications.buttons.primaryButton"
+      [secondaryButton]="notifications.buttons.secondaryButton"
+      (closeClick)="openNotification()"
+      (eventClick)="notificationEvent()"
+    >
+    </pricefy-notifications>
+  </mat-card>
+
+  <!-- Snackbar -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Snackbar Component</mat-card-title>
+    <pricefy-button-raised
+      color="primary"
+      (click)="snackbarFake = !snackbarFake"
+      [label]="'Open snackbar'"
+    >
+    </pricefy-button-raised>
+    <pricefy-snackbar
+      [duration]="3000"
+      [icon]="'fa-light fa-triangle-exclamation'"
+      [theme]="'warn-theme'"
+      [message]="'Requisição feita com sucesso!'"
+      [horizontalPosition]="'center'"
+      [verticalPosition]="'bottom'"
+      [show]="snackbarFake"
+    ></pricefy-snackbar>
+  </mat-card>
+
+  <!-- Supercard -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>SuperCard Component</mat-card-title>
+    <pricefy-button-raised
+      color="primary"
+      (click)="openDialog()"
+      [label]="'Open dialog SuperCard'"
+    >
+    </pricefy-button-raised>
+
+    <!-- Supercard -->
+    <pricefy-super-card
+      [title]="'Bauduco Bisnagas'"
+      [model]="model"
+      [menuItems]="menuItems"
+      (closeClick)="closeDialog()"
+      (menuClick)="onMenuClick($event)"
+      (superCardTabClick)="onSuperCardTabClick($event)"
+    >
+      <div class="wrapper">
+        <div *ngIf="selectTab && model">
+          <div *ngIf="selectTab.component === 'agreement'">conteudo</div>
+        </div>
+      </div>
+    </pricefy-super-card>
+  </mat-card>
+
+  <!-- Table -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Table Component</mat-card-title>
+    <pricefy-table
+      [title]="'Tabela'"
+      [displayedColumns]="displayedColumns"
+      [columns]="tableColumns"
+      [items]="tableItems"
+      (ActionBtnClick)="actionTableClick($event)"
+      (itemsSelected)="onSelectedItems($event)"
+    ></pricefy-table>
+  </mat-card>
+
+  <!-- Tabs -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Tabs Component</mat-card-title>
+
+    <pricefy-tabs [tabsItems]="tabsItems"> </pricefy-tabs>
+  </mat-card>
+
+  <!-- Toolbar -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Toolbar Component</mat-card-title>
+    <pricefy-toolbar
+      [title]="'Título'"
+      [subtitle]="'esse é um subtitulo'"
+      [btnLabel]="'Criar Fornecedor'"
+      [id]="1"
+      [btnRouter]="'/resgistrarion/provider'"
+      (backClick)="onMenuClick($event)"
+      (btnClick)="onClick($event)"
+    ></pricefy-toolbar>
+
+    <pricefy-toolbar
+      [title]="'Título'"
+      [btnLabel]="'Criar Fornecedor'"
+      [id]="1"
+      [btnRouter]="'/resgistrarion/provider'"
+      (backClick)="onMenuClick($event)"
+      (btnClick)="onClick($event)"
+      [back]="'/'"
+    ></pricefy-toolbar>
+  </mat-card>
+
+  <!-- Tooltip -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>Tooltip Component</mat-card-title>
+
+    <pricefy-tooltip
+      [icon]="'fa fa-circle-info'"
+      [content]="
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ante neque, placerat nec ligula a, venenatis euismod ligula. Integer volutpat dolor posuere, efficitur quam ut, convallis felis. Vestibulum maximus, augue sed maximus auctor, augue felis pharetra ex, non fermentum diam leo id risus. Nullam sed ornare velit, viverra consectetur urna. Integer ac mi commodo, lacinia erat sollicitudin, fermentum erat. Morbi ullamcorper semper egestas. In purus velit, vestibulum nec leo eu, efficitur aliquam purus. Nullam tincidunt quam id velit iaculis dignissim. Maecenas consequat pulvinar mattis. Morbi posuere venenatis tempus. Pellentesque sed felis a urna porttitor volutpat. Cras efficitur nisi eu lorem egestas, quis pretium nisi iaculis. Donec pharetra eros id nisl sagittis sagittis.'
+      "
+    ></pricefy-tooltip>
+  </mat-card>
+
+  <!-- Upload -->
+  <mat-card style="padding: 25px; margin: 15px 0">
+    <mat-card-title>{{ 'UPLOAD_COMPONENT' | translate }}</mat-card-title>
+    <pricefy-upload [type]="'image'"> </pricefy-upload>
+
+    <pricefy-upload
+      [type]="'file'"
+      [fileSrc]="'assets/testecsv.csv'"
+      [fileName]="'template.csv'"
+    ></pricefy-upload>
+
+    <pricefy-upload [type]="'video'" [title]="'Vídeos'"> </pricefy-upload>
+   </mat-card>
+</div>

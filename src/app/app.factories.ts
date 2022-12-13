@@ -33,7 +33,7 @@ export function TranslateInitializer(translate: TranslateService) {
             console.warn(
                 'Não foi possível ler o idioma de: `localStorage["locale"]`, capturado a informação das configurações do navegador!'
             );
-            userLang = (navigator["language"] || "pt-br").toLowerCase();
+            userLang = (navigator["language"] || navigator["userLanguage"] || "pt-br").toLowerCase();
         }
 
         translate.setDefaultLang(userLang);

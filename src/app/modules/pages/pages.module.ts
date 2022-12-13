@@ -15,8 +15,12 @@ import { PagesRoutingModule } from "./pages.routing.module";
 import { RecoverComponent } from "./recover/recover.component";
 import { RegisterComponent } from "./register/register.component";
 
+import { MaterialModule } from '../../plugins/material.module';
+import { DSModule } from '../../plugins/design-system.module';
+import { HelpersModules } from '../../plugins/helpers.module';
+
 @NgModule({
-    imports: [CommonModule, FormsModule, ReactiveFormsModule, PagesRoutingModule, CoreModule],
+    imports: [MaterialModule, DSModule, HelpersModules, CommonModule, FormsModule, ReactiveFormsModule, PagesRoutingModule, CoreModule],
     declarations: [
         LoginComponent,
         NotFoundComponent,

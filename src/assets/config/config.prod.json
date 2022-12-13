@@ -1,6 +1,6 @@
 {
-  "securityApiUrl": "https://app.pricefy.com.br/PricefySecurity/api",
-  "serviceApiUrl": "https://app.pricefy.com.br/PricefyAPI/api",
+  "securityApiUrl": "https://{0}.pricefy.com.br/PricefySecurity/api",
+  "serviceApiUrl": "https://{0}.pricefy.com.br/PricefyAPI/api",
   "privateApiUrl": "https://servicos-promo.pricefy.com.br/api/v1",
   "privateApisUrls": {
     "promo": "https://servicos-promo.pricefy.com.br/api/v1",
@@ -9,7 +9,7 @@
   },
   "timeoutInterval": 14400,
   "theme": "pricefy",
-  "pricefyWebUrl": "https://app.pricefy.com.br/",
+  "pricefyWebUrl": "https://{0}.pricefy.com.br/",
   "timerRefresh": 5,
   "externalServiceApiUrl": "https://mcz0400l6h.execute-api.us-east-1.amazonaws.com/stage-usuario-trial",
   "externalServiceApiKey": "SECRET_KEY_UNDEFINED",

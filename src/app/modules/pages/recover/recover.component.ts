@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { CustomValidators } from "ngx-custom-validators";
 import { SettingsService } from "../../../../../pricefyfrontlib/app/core/settings/settings.service";
 
 @Component({
@@ -12,7 +13,7 @@ export class RecoverComponent implements OnInit {
 
     constructor(public settings: SettingsService, fb: FormBuilder) {
         this.valForm = fb.group({
-            email: [null, [Validators.required]],
+            email: [null, Validators.compose([Validators.required, CustomValidators.email])],
         });
     }
 

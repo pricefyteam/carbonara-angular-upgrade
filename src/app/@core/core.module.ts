@@ -34,6 +34,11 @@ import { ProvedoresService } from "./services/provedores.service";
 import { WebConfigService } from "./services/web-config.service";
 import { ClientesService } from "./services/clientes.service";
 
+
+import { MaterialModule } from '../plugins/material.module';
+import { DSModule } from '../plugins/design-system.module';
+import { HelpersModules } from '../plugins/helpers.module';
+
 const DECLARATIONS_AND_EXPORTS = [
     SortDirective,
     HeaderComponent,
@@ -57,6 +62,7 @@ const IMPORTS_AND_EXPORTS = [
     ImageCropperModule,
     ReactiveFormsModule,
     InfiniteScrollModule,
+    MaterialModule, DSModule, HelpersModules,
 ];
 
 const PROVIDERS = [

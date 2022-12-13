@@ -1,3 +1,6 @@
 [submodule "pricefyfrontlib"]
 	path = pricefyfrontlib
 	url = git@github.com:pricefyteam/pricefy-frontlib.git
+[submodule "pricefy-frontlib"]
+	path = pricefy-frontlib
+	url = git@github.com:pricefyteam/pricefy-frontlib.git
